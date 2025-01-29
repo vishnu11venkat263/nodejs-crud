@@ -1,7 +1,7 @@
 {
-  "name": "node-easy-notes-app",
+  "name": "node-user-app",
   "version": "1.0.0",
-  "description": "Never miss a thing in Life. Take notes quickly. Organize and keep track of all your notes.",
+  "description": "Organize and keep track of all your user.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,9 +12,9 @@
     "RestAPI",
     "MongoDB",
     "Mongoose",
-    "Notes"
+    "Users"
   ],
-  "author": "callicoder",
+  "author": "Vishnu",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.2",
