@@ -3,7 +3,7 @@ module.exports = function(app) {
     var user = require('../controllers/user.controller.js');
 
     // Create a new user
-    app.post('/user', user.create);
+    app.post('/createUser', user.create);
 
     // Retrieve all user
     app.get('/user', user.findAll);
