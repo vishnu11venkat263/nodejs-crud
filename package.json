@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "build": "npm run build --output public"
+    "start": "node server.js",
+  "build": "echo 'No build needed'"
   },
   "keywords": [
     "Express",
