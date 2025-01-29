@@ -10,26 +10,30 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // parse application/json
 app.use(bodyParser.json())
 
-// Configuring the database
-var dbConfig = require('./config/database.config.js');
-var mongoose = require('mongoose');
 
-mongoose.Promise = global.Promise;
+const mongoose = require("mongoose");
 
-mongoose.connect(dbConfig.url, {
-    useNewUrlParser: true,
-  useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 5000
-  })
-    .then(() => console.log("Connected to MongoDB!"))
-    .catch((err) => console.error("MongoDB connection error:", err));
+const mongoURI = "mongodb+srv://venkat:Ihate123@cluster1.eranp.mongodb.net/";
 
+async function connectDB() {
+  try {
+    await mongoose.createConnection(mongoURI, {
+     
+      dbName:"userManagement",
+      
+    });
+    console.log("MongoDB Connected...");
+  } catch (err) {
+    console.error("MongoDB connection error:", err);
+    process.exit(1);
+  }
+}
 
-
+connectDB();
 
 // define a simple route
 app.get('/', function(req, res){
-    res.json({"message": "Welcome to User management application. Create users quickly. Organize and keep track of all your users."});
+    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
 });
 
 require('./app/routes/user.routes.js')(app);

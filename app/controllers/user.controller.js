@@ -24,6 +24,7 @@ exports.create = function (req, res) {
       res.send(data);
     }
   });
+  
 };
      
 exports.findAll = function (req, res) {
